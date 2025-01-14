@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KR_5_XRAMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="id_doljnost">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="doljnost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_id_doljnost" FromRole="id_doljnost" ToRole="User" />
+  </EntityType>
+  <EntityType Name="id_Pol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="pol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_id_Pol" FromRole="id_Pol" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id_doljnost" Type="Int32" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="otchestvo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="number_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="data" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="vxod" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="type_vxod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_pol" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="id_doljnost1" Relationship="Self.FK_User_id_doljnost" FromRole="User" ToRole="id_doljnost" />
+    <NavigationProperty Name="id_Pol1" Relationship="Self.FK_User_id_Pol" FromRole="User" ToRole="id_Pol" />
+  </EntityType>
+  <Association Name="FK_User_id_doljnost">
+    <End Role="id_doljnost" Type="Self.id_doljnost" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="id_doljnost">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="id_doljnost" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_id_Pol">
+    <End Role="id_Pol" Type="Self.id_Pol" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="id_Pol">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="id_pol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KR_5_XRAMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="id_doljnost" EntityType="Self.id_doljnost" />
+    <EntitySet Name="id_Pol" EntityType="Self.id_Pol" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK_User_id_doljnost" Association="Self.FK_User_id_doljnost">
+      <End Role="id_doljnost" EntitySet="id_doljnost" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_id_Pol" Association="Self.FK_User_id_Pol">
+      <End Role="id_Pol" EntitySet="id_Pol" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

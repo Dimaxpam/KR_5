@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище KR_5_XRAMModelContainer" CdmEntityContainer="KR_5_XRAMEntities">
+    <EntitySetMapping Name="id_doljnost">
+      <EntityTypeMapping TypeName="KR_5_XRAMModel.id_doljnost">
+        <MappingFragment StoreEntitySet="id_doljnost">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="doljnost" ColumnName="doljnost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="id_Pol">
+      <EntityTypeMapping TypeName="KR_5_XRAMModel.id_Pol">
+        <MappingFragment StoreEntitySet="id_Pol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pol" ColumnName="pol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="KR_5_XRAMModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_doljnost" ColumnName="id_doljnost" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="otchestvo" ColumnName="otchestvo" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="number_phone" ColumnName="number_phone" />
+          <ScalarProperty Name="passport" ColumnName="passport" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="vxod" ColumnName="vxod" />
+          <ScalarProperty Name="type_vxod" ColumnName="type_vxod" />
+          <ScalarProperty Name="id_pol" ColumnName="id_pol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
