@@ -23,6 +23,7 @@ namespace Xram_KR5
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

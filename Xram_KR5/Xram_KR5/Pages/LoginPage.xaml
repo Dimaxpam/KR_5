@@ -10,11 +10,11 @@
 
     <Grid>
         <StackPanel>
-            <Label Content="Логин" HorizontalAlignment="Center"></Label>
-            <TextBox Height="20" Width="150" Margin="10"></TextBox>
-            <Label Content="Пароль" HorizontalAlignment="Center"></Label>
-            <PasswordBox Height="20" Width="150" ></PasswordBox>
-            <Button Height="20" Width="120" Content="Войти" Background="#FF498C51" Margin="10"></Button>
+            <Label Content="Логин" HorizontalAlignment="Center"  FontFamily="Comic Sans MS"></Label>
+            <TextBox Height="20" Width="150" Margin="10"  FontFamily="Comic Sans MS"></TextBox>
+            <Label Content="Пароль" HorizontalAlignment="Center"  FontFamily="Comic Sans MS"></Label>
+            <PasswordBox Height="20" Width="150"  FontFamily="Comic Sans MS"></PasswordBox>
+            <Button Height="20" Width="120" Content="Войти" Background="#FF498C51" Margin="10"  FontFamily="Comic Sans MS" Click="Button_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

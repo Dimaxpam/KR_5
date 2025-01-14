@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Xram_KR5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="ИС по прокату спортивного инвентаря" Height="600" Width="1000">
     <Grid>
        
         <Grid.RowDefinitions>
@@ -13,7 +13,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#FF76E383">
-            <Label Content="ИС по прокату спортивного инвентаря" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></Label>
+            <Label Content="ИС по прокату спортивного инвентаря" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="Comic Sans MS"></Label>
             <Image Source="Res/logo.png" VerticalAlignment="Top" HorizontalAlignment="Left"></Image>
         </Grid>
         <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
